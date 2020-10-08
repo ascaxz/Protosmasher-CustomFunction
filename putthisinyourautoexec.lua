@@ -30,3 +30,14 @@ getgenv().isfolder = newcclosure(function(Folder)
     return #list_directory(Folder) > 0
 end)
 
+getgenv().syn.set_thread_identity = newcclosure(function(Int)
+    set_thread_context(Int)
+end)
+
+getgenv().syn.get_thread_identity = newcclosure(function()
+    return get_thread_context()
+end)
+
+getgenv().syn.queue_on_teleport = newcclosure(function(Code)
+    queue_on_teleport(Code)
+end)
